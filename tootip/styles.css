@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.my-text a{
+    position: relative;
+}
+
+.my-text a::after{
+    content: 'visit the website';
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: salmon;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s .5s,
+                opacity .5s ease-out,
+                transform .5s ease-in;
+}
+
+.my-text a:hover:after{
+opacity: 1;
+visibility: visible;
+transform: translateY(-100%);
+transition: opacity .2s ease-out,
+            transform .5s ease-in;
+
+}
